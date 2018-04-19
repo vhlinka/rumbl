@@ -57,13 +57,16 @@ exports.config = {
     }
   },
 
+// vh - added jquery
   modules: {
     autoRequire: {
       "js/app.js": ["web/static/js/app"]
+      "js/app.js": ["jquery", "web/static/js/app"]
     }
   },
-
+// vh: added jquery
   npm: {
     enabled: true
+    globals: {"jQuery": "jquery"}
   }
 };

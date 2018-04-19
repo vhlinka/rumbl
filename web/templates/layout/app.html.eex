@@ -12,6 +12,19 @@
   </head>
 
   <body>
+    <div class="header">
+      <ol class="breadcrumb text-right">
+        <%= if @current_user do %>
+          <li><%= @current_user.username %></li>
+          <%= link "Log out", to: logout_path(@conn, :index) %>
+          <%= link "List Users", to: user_path(@conn, :index) %>
+        <% else %>
+          <%= link "Register", to: user_path(@conn, :new) %>
+          <%= link "Log in", to: session_path(@conn, :new) %>
+        <% end %>
+      </ol>
+      <span class="logo"></span>
+    </div>
     <div class="container">
       <header class="header">
         <nav role="navigation">
